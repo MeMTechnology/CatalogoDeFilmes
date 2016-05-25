@@ -6,24 +6,25 @@
     <title>Catalog Movie Login</title>
 </head>
 <body>
-      
-    <a href="#login" id="login-button">Login</a><br>
-    
-    <div id="login">
-        <a href="#" class="close">&times;</a>
-        <div style="height:20%"></div>
-        
-        <div id="login-inputs">
+	
+
+	<div id="myNav" class="overlay">
+    	<!-- Button to close the overlay navigation -->
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlay-content">
+    		<div id="login-inputs">
           <input type="text" placeholder="Nome de usuário" name="usuario"><br />
-          <input type="password" placeholder="Senha" name="senha">
+          <input type="password" placeholder="Senha" name="senha"><br/>
+		  <input type="button" onclick="Login()" class="botao" value="Login">
         </div>
-        <div id="enviar">
-          <input type="button" onclick="Login()" class="botao" value="Login">
-        </div>
+        
+	</div>
+        
         
     </div>
-    
-    <div id="mask" onclick="document.location='#';"></div>
+ <div id="enviar">
+          <input type="button" onclick="openNav()" class="botao" value="Login">
+        </div>
     
    <a href="searchScreen.html">Search Ttitle</a>
    

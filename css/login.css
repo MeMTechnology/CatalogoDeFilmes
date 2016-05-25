@@ -1,55 +1,57 @@
-#login{ /* we set all of the properties for are overlay */
-
-    height:20%;
-    width:20%;
-    margin:100px red auto;
-    border-color: aqua;
-    background:black;
-    color:black;
-    padding:10px;
-    position:absolute;
-    top:10%;
-    left:15%;
-    z-index:1000;
-    display:none;
-    /* CSS 3 */
-    -webkit-border-radius:10px;
-    -moz-border-radius:10px;
-    -o-border-radius:10px;
-    border-radius:10px;
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 30%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 15%;
+    /*bottom: 130px;*/
+    top: 200px;
+    background-color: rgb(100,100,100); /* Black fallback color */
+    background-color: rgba(50, 50, 50, 0.7); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
-#mask{ /* create are mask */
-    position:fixed;
-    top:0;
-    left:0;
-    background:black;
-    z-index:500;
-    width:100%;
-    height:100%;
-    display:none;
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 20px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
-/* use :target to look for a link to the overlay then we find are mask */
-#login:target, #overlay:target + #mask{
-    display:block;
-    opacity:1;
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #FF5050;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
 }
-.close{ /* to make a nice looking pure CSS3 close button */
-    display:block;
-    position:absolute;
-    top:-20px;
-    right:-20px;
-    background:red;
-    color:white;
-    height:40px;
-    width:40px;
-    line-height:40px;
-    font-size:35px;
-    text-decoration:none;
-    text-align:center;
-    font-weight:bold;
-    -webkit-border-radius:40px;
-    -moz-border-radius:40px;
-    -o-border-radius:40px;
-    border-radius:40px;
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.closebtn {
+    position: absolute;
+    top: -30px;
+    right: -5px;
+    font-size: 60px !important; /* Override the font-size specified earlier (36px) for all navigation links */
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .closebtn {
+        font-size: 40px !important;
+        top: 15px;
+        right: 35px;
+    }
 }
