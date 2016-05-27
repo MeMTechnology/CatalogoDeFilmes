@@ -11,49 +11,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Add title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
 </head>
 <body>
-   <form action="">
-    <fieldset id="add_title">
-        <legend>Add Title</legend>
-        <label for="txImagem">Image</label><br>
-        <input type="file" name="arquivo" id="image" accept="image/*"><br>
-        
-        <label for="txName">Name</label><input type="text" name="name"><br>
-        
-        <label for="slGenre">Genre</label>
-        <select name="genre" id="genre_movie">
-            <option value="Ação">Ação</option>
-            <option value="Animação">Animação</option>
-            <option value="Aventura">Aventura</option>
-            <option value="Comédia">Comédia</option>
-            <option value="Comédia Romântica">Comédia Romântica</option>
-            <option value="Dança">Dança</option>
-            <option value="Documentário">Documentário</option>
-            <option value="Drama">Drama</option>
-            <option value="Fantasia">Fantasia</option>
-            <option value="Faroeste">Faroeste</option>
-            <option value="Ficção">Ficção</option>
-            <option value="Guerra">Guerra</option>
-            <option value="Musical">Musical</option>
-            <option value="Policial">Policial</option>
-            <option value="Romance">Romance</option>
-            <option value="Suspense">Suspense</option>
-            <option value="Terror">Terror</option>
-        </select><br>
+  <header>
+     <h1 class="col-md-offset-4">Add title</h1>
+ </header>
+    <div class="row">
+         <div role="main" class="col-md-8">
+             <form action="#" method="post" class="form-horizontal">
                 
-        <label for="txLanguage">Language</label><input type="text" name="language"><br>
-        
-        <label for="nuYear">Year</label><input type="number" name="number"><br>
-        
-        <label for="txSinopse">Sinopse</label><br>
-        <textarea name="txsinopse" id="sinopse" cols="80" rows="10"></textarea><br>
-        
-        <input type="submit" value="Enviar"><input type="button" value="Cancel">
-    </fieldset>          
-   
-   </form>
-    
+                 <div class="form-group">
+                    <label for="txImagem" class="col-md-3 control-label">Image</label>
+                    <div class="col-md-9">    
+                        <input type="file" name="arquivo" class="form-control" id="image" accept="image/*">
+                    </div>
+                 </div>
+                 
+                 <div class="form-group">
+                      <label for="txName" class="col-md-3 control-label">Name</label>
+                      <div class="col-md-9">   
+                      <input type="text" class="form-control" name="name">
+                     </div>
+                 </div>
+                 
+                 <div class="form-group">
+                      <label for="slGenre" class="col-md-3 control-label">Genre</label>
+                      <div class="col-md-9">   
+                       <select name="genre" id="genre_movie" class="form-control">
+                        <option value="Ação">Ação</option>
+                        <option value="Animação">Animação</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Comédia">Comédia</option>
+                        <option value="Comédia Romântica">Comédia Romântica</option>
+                        <option value="Dança">Dança</option>
+                        <option value="Documentário">Documentário</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Faroeste">Faroeste</option>
+                        <option value="Ficção">Ficção</option>
+                        <option value="Guerra">Guerra</option>
+                        <option value="Musical">Musical</option>
+                        <option value="Policial">Policial</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Suspense">Suspense</option>
+                        <option value="Terror">Terror</option>
+                      </select>
+                     </div>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="txLanguage" class="col-md-3 control-label">Language</label>
+                     <div class="col-md-9">   
+                     <input type="text" class="form-control" name="language">
+                     </div>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="nuYear" class="col-md-3 control-label">Year</label>
+                     <div class="col-md-9">   
+                     <input type="number" class="form-control" name="number">
+                     </div>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="txSinopse" class="col-md-3 control-label">Sinopse</label>
+                     <div class="col-md-9">   
+                        <textarea name="txsinopse" id="sinopse" class="form-control" cols="80" rows="10"></textarea>
+                     </div>
+                 </div>
+                 
+                 <div class="form-group">
+                     <div class="col-md-9 col-md-offset-3">
+                       <div class="col-sm-3">   
+                        <input type="submit" class="btn btn-block btn-primary" value="Enviar">
+                       </div>
+                       <div class="col-sm-3">   
+                        <input type="cancel" class="btn btn-block btn-danger" value="Cancel">
+                       </div>                       
+                     </div>
+                 </div>                 
+             </form>
+             
+         </div>
+ 
+     <aside role="complementary" class="col-md-4">
+ 
+     </aside>
+ 
+     </div> <!-- /.row -->
+ 
+     <hr />
+     <footer>
+         <p class="text-muted">&copy; 2015 - Web Dev Academy</p>
+     </footer>
+  <!-- /.container -->
+  
+              <input type="submit" value="Enviar"><input type="button" value="Cancel">
+  
+ 
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>   
 </body>
 </html>
