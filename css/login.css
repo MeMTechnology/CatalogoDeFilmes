@@ -1,7 +1,7 @@
 /* The Overlay (background) */
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */    
-    height: 30%;
+    height: 40%;
     width: 0;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
