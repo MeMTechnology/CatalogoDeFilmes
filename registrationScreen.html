@@ -28,12 +28,12 @@
                  <div class="form-group">
                       <label for="txName" class="col-md-3 control-label">Name</label>
                       <div class="col-md-9">   
-                      <input type="text" class="form-control" name="name">
+                      <input type="text" class="form-control" name="title" id="title">
                      </div>
                  </div>
                  
                  <div class="form-group">
-                      <label for="slGenre" class="col-md-3 control-label">Genre</label>
+                      <label for="slGenre" id="genre" class="col-md-3 control-label">Genre</label>
                       <div class="col-md-9">   
                        <select name="genre" id="genre_movie" class="form-control">
                         <option value="Ação">Ação</option>
@@ -60,14 +60,14 @@
                  <div class="form-group">
                      <label for="txLanguage" class="col-md-3 control-label">Language</label>
                      <div class="col-md-9">   
-                     <input type="text" class="form-control" name="language">
+                     <input type="text" class="form-control" id="language" name="language">
                      </div>
                  </div>
                  
                  <div class="form-group">
                      <label for="nuYear" class="col-md-3 control-label">Year</label>
                      <div class="col-md-9">   
-                     <input type="number" class="form-control" name="number">
+                     <input type="number" class="form-control" name="number" id="year">
                      </div>
                  </div>
                  
@@ -81,7 +81,7 @@
                  <div class="form-group">
                      <div class="col-md-9 col-md-offset-3">
                        <div class="col-sm-3">   
-                        <input type="submit" class="btn btn-block btn-primary" value="Enviar">
+                        <input type="submit" onClick="salvar();" class="btn btn-block btn-primary" value="Enviar">
                        </div>
                        <div class="col-sm-3">   
                         <a class="btn btn-block btn-danger" href="index.html">Cancel</a>
@@ -94,6 +94,7 @@
      </div>
           
     <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>   
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/localStorage.js"></script>  
 </body>
 </html>
