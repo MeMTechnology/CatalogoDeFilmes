@@ -1,3 +1,19 @@
+var total = localStorage.length,
+        i = 0,
+        chave,
+        arrayValores = [],
+        arrayChaves = [],
+        valor;
+        
+       while(i <= total){
+           chave=localStorage.key(i);
+           arrayChaves[i] = chave;
+           valor=localStorage.getItem(chave);
+           arrayValores[i]=valor;
+           console.log(localStorage.getItem(arrayChaves[i]));
+           i++
+       }
+       
 function salvar() {
     var movie = {
         title: $('#title').val(),
