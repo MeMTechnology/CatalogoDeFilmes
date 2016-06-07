@@ -1,4 +1,3 @@
-$(function(){
 	var keyStorage = localStorage.getItem("keyStorage");// Recupera os dados armazenados
 	keyStorage = JSON.parse(keyStorage); // Converte string para objeto
 	if(keyStorage == null){// Caso não haja conteúdo, iniciamos
@@ -10,17 +9,14 @@ $(function(){
 	}
 	//alert(keyStorage);
 	
-		
-});
-
 function salvar(){
-	alert(document.getElementsByName('newUser')[0].value);
+	//alert(document.getElementsByName('newUser')[0].value);
 	keyStorage = JSON.stringify({
 			user   : document.getElementsByName('newUser')[0].value,
 			password  : document.getElementsByName('newKey')[0].value ,
 		});//Altera o item selecionado na tabela
 	localStorage.setItem("keyStorage", JSON.stringify(keyStorage));
-	alert("Sucesso: "+keyStorage);
+	//alert("Sucesso: "+keyStorage);
 }
 
 function getKey(){
@@ -31,15 +27,13 @@ function getKey(){
 function Login() {
 
 	var teste = getKey();
-	alert("tet");
 	var usuario = document.getElementsByName('usuario')[0].value;
 	usuario=usuario.toLowerCase();
    var senha= document.getElementsByName('senha')[0].value;
   senha=senha.toLowerCase();
-  alert("tet");
   var jsonObj = JSON.parse(teste);
-  alert(jsonObj.user);
-  if (usuario== jsonObj.user && senha==jsonObj.password) {
+  //alert(jsonObj.user);
+  if (usuario == jsonObj.user && senha==jsonObj.password) {
 	document.getElementById("myForm").reset();
     window.location="index.html";
   }
