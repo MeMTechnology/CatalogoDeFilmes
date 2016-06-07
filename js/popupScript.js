@@ -1,15 +1,74 @@
+$(function(){
+	var keyStorage = localStorage.getItem("keyStorage");// Recupera os dados armazenados
+	keyStorage = JSON.parse(keyStorage); // Converte string para objeto
+	if(keyStorage == null){// Caso não haja conteúdo, iniciamos
+		keyStorage = JSON.stringify({
+			user   : "admin",
+			password  : "admin"
+		});//Altera o item selecionado na tabela
+	localStorage.setItem("keyStorage", JSON.stringify(keyStorage));
+	}
+	//alert(keyStorage);
+	
+		
+});
+
+function salvar(){
+	alert(document.getElementsByName('newUser')[0].value);
+	keyStorage = JSON.stringify({
+			user   : document.getElementsByName('newUser')[0].value,
+			password  : document.getElementsByName('newKey')[0].value ,
+		});//Altera o item selecionado na tabela
+	localStorage.setItem("keyStorage", JSON.stringify(keyStorage));
+	alert("Sucesso: "+keyStorage);
+}
+
+function getKey(){
+	var keyStorage = localStorage.getItem("keyStorage");// Recupera os dados armazenados
+	keyStorage = JSON.parse(keyStorage); // Converte string para objeto
+	return keyStorage;
+}
 function Login() {
-  var usuario = document.getElementsByName('usuario')[0].value;
-  usuario=usuario.toLowerCase();
-  var senha= document.getElementsByName('senha')[0].value;
-  seha=senha.toLowerCase();
-  if (usuario=="admin" && senha=="admin") {
+
+	var teste = getKey();
+	alert("tet");
+	var usuario = document.getElementsByName('usuario')[0].value;
+	usuario=usuario.toLowerCase();
+   var senha= document.getElementsByName('senha')[0].value;
+  senha=senha.toLowerCase();
+  alert("tet");
+  var jsonObj = JSON.parse(teste);
+  alert(jsonObj.user);
+  if (usuario== jsonObj.user && senha==jsonObj.password) {
 	document.getElementById("myForm").reset();
     window.location="index.html";
   }
   else { 
 	document.getElementById("myForm").reset();
 	alert("Dados incorretos, tente novamente"); 
+  }
+}
+
+function newPassword() {
+	var tiao = getKey();
+	var usuario = document.getElementsByName('usuario')[0].value;
+	usuario=usuario.toLowerCase();
+   var senha= document.getElementsByName('senha')[0].value;
+  senha=senha.toLowerCase();
+  var novoUser = document.getElementsByName('newUser')[0].value;
+  novoUser = novoUser.toLowerCase();
+  
+  var novaSenha = document.getElementsByName('newKey')[0].value;
+  novaSenha = novaSenha.toLowerCase();
+	var jsonObj = JSON.parse(tiao);//Converto o Json em objeto
+	if (usuario== jsonObj.user && senha==jsonObj.password) {
+		salvar();
+		window.location="index.html";
+		document.getElementById("myForm").reset();
+	}
+	else { 
+		document.getElementById("myForm").reset();
+		alert("Dados incorretos, tente novamente"); 
   }
 }
 
