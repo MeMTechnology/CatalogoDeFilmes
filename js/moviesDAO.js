@@ -22,5 +22,17 @@ var moviesDao = {
     saveMovies: function (){
         var moviesJsonText = JSON.stringify(moviesDao.movies);
         window.localStorage.setItem('list-movies', moviesJsonText);
-    }   
+    },
+    
+    getMoviesById: function(search) {
+        moviesDao.loadMovies();
+        return moviesDao.movies.filter(function(a) { 
+            return a.title.includes(search) || a.year == search || a.language == search || a.genre == search
+        });
+    },
+    
+    listResults: function(name){
+        var list = moviesDao.getMoviesById(name);
+        
+    }  
 };

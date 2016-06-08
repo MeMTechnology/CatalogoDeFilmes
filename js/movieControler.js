@@ -2,6 +2,7 @@ var movieControler = {
     
     init: function (params) {
         movieControler.setForm();
+        moviesDao.loadMovies();
     },
     
     setForm: function () {
@@ -11,14 +12,14 @@ var movieControler = {
     
     eventSubmitHandler: function (event) {
         event.preventDefault();
-        var inputMovie = JSON.stringify({
+         
+        var inputMovie = {
             title : $('#title').val(),
-            genre : $('#genre').val(),
+            genre : $('#genre_movie').val(),
             year : $('#year').val(),
             language : $('#language').val(),
-            sinopse : $('sinopse').val(),
-        });
-        console.log(inputMovie.value);
+            sinopse : $('#sinopse').val()
+        };
         movieControler.addMovie(inputMovie);
     },
     
