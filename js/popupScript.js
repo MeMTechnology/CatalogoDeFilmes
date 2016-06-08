@@ -7,7 +7,15 @@
 		});//Altera o item selecionado na tabela
 	localStorage.setItem("keyStorage", JSON.stringify(keyStorage));
 	}
-	//alert(keyStorage);
+	
+	var loginUp = localStorage.getItem("loginUp");// Recupera os dados armazenados
+	loginUp = JSON.parse(loginUp); // Converte string para objeto
+	if(loginUp == null){// Caso não haja conteúdo, iniciamos
+		loginUp = JSON.stringify({
+			flag   : "0"
+		});//Altera o item selecionado na tabela
+	localStorage.setItem("loginUp", JSON.stringify(loginUp));
+	}
 	
 function salvar(){
 	//alert(document.getElementsByName('newUser')[0].value);
@@ -35,12 +43,21 @@ function Login() {
   //alert(jsonObj.user);
   if (usuario == jsonObj.user && senha==jsonObj.password) {
 	document.getElementById("myForm").reset();
+	
+	loginUp = JSON.stringify({flag  : "1"});
+	localStorage.setItem("loginUp", JSON.stringify(loginUp));
     window.location="index.html";
   }
   else { 
 	document.getElementById("myForm").reset();
 	alert("Dados incorretos, tente novamente"); 
   }
+}
+
+function logout(){
+	loginUp = JSON.stringify({flag  : "0"});
+	localStorage.setItem("loginUp", JSON.stringify(loginUp));
+	window.location="loginPage.html";
 }
 
 function newPassword() {
@@ -76,4 +93,13 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
     document.getElementById("myNav").style.border = "0px";
+}
+
+function retorna(){
+	var logString = localStorage.getItem("loginUp");// Recupera os dados armazenados
+	logString = JSON.parse(logString);
+	logString = JSON.parse(logString);
+	//alert(logString.flag);
+	if(logString.flag == "1") window.location="index.html";
+	else window.location="loginPage.html";
 }
