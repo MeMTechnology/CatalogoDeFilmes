@@ -58,8 +58,38 @@ var moviesDao = {
     
     createTrsElements: function(e){
         console.log(e.title);
-    }
-};
+    },
+	
+	xyz: function(valor){
+		valor += 1;
+		var output= '';
+		$('#tbMovies tbody tr:nth-child('+valor+') td:nth-child(1)').each(function() {
+			output += $(this).text();
+		});
+		return output;
+	},
+	
+	init : function() {
+		$('#tbMovies').on("dblclick", "tr", function() {
+			var tr = $(this).closest('tr').index();
+			
+			var recoverMovie = moviesDao.xyz(tr);
 
+			
+			alert(recoverMovie);
+
+			
+			//alert(testen);
+	
+			//var movieSelection = window.localStorage.getItem('list-movies');// Recupera os dados armazenados
+			//var testen = JSON.parse(movieSelection);
+			//alert (testen[tr].title);
+		        
+		        
+		        
+		});
+	}
+};
 moviesDao.loadMovies();
 moviesDao.getActionSearch();
+moviesDao.init();
