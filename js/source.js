@@ -13,8 +13,11 @@ function tester() {
 	doc.text(100, 40, 'Language');
 	doc.text(140, 40, 'Year');
 	
-	for(i = 0, j = 50; i <=testen.length; i++,j = j+ 10){
-		doc.text(50, j, testen[0].title);
+	for(i = 0, j = 50; i <testen.length; i++,j = j+ 10){
+		doc.text(20, j, testen[i].title);
+		doc.text(60, j, testen[i].genre);
+		doc.text(100, j, testen[i].language);
+		doc.text(140, j, testen[i].year);
 	}
 	
 
