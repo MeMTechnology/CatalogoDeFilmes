@@ -21,6 +21,8 @@ var movieControler = {
             sinopse : $('#sinopse').val()
         };
         movieControler.addMovie(inputMovie);
+        alert("Dados Salvos!");
+        document.getElementById('form-movie').reset();
     },
     
     addMovie: function (movie) {
