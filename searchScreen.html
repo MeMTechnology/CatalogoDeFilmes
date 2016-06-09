@@ -21,7 +21,7 @@
                 </button>
                 <a class="navbar-brand active" href="#">Catalog Movie</a>
             </div>
-            <div class="navbar-header col-md-10 container-center">
+            <div class="navbar-header col-md-9 container-center">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search" name="q">
                     <div class="input-group-btn">
@@ -30,6 +30,7 @@
                 </div>  
             </div>          
             <div class="nav navbar-nav navbar-right">
+				<li><a href="#" onclick="tester()" target="_blank"><span class="glyphicon glyphicon-cog"></span>PDF</a></li>
                 <li><a href="#" onclick="retorna()"><span class="glyphicon glyphicon-log-in"></span>  Return</a></li>
             </div>
         </div>  
@@ -50,9 +51,13 @@
         </tbody>
     </table>
 	
+	<script src="js/source.js"></script> 
 	<script src="js/popupScript.js"></script> 
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/moviesDAO.js"></script> 
+	<script src="js/jspdf.debug.js"></script>
+	<script src="jspdf.js"></script>
+	
 </body>
 </html>
