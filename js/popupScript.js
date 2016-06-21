@@ -46,7 +46,7 @@ function Login() {
 	
 	loginUp = JSON.stringify({flag  : "1"});
 	localStorage.setItem("loginUp", JSON.stringify(loginUp));
-    window.location="index.html";
+    window.location="initialPage.html";
   }
   else { 
 	document.getElementById("myForm").reset();
@@ -57,7 +57,7 @@ function Login() {
 function logout(){
 	loginUp = JSON.stringify({flag  : "0"});
 	localStorage.setItem("loginUp", JSON.stringify(loginUp));
-	window.location="loginPage.html";
+	window.location="index.html";
 }
 
 function newPassword() {
@@ -74,7 +74,7 @@ function newPassword() {
 	var jsonObj = JSON.parse(tiao);//Converto o Json em objeto
 	if (usuario== jsonObj.user && senha==jsonObj.password) {
 		salvar();
-		window.location="index.html";
+		window.location="initialPage.html";
 		document.getElementById("myForm").reset();
 	}
 	else { 
@@ -100,6 +100,6 @@ function retorna(){
 	logString = JSON.parse(logString);
 	logString = JSON.parse(logString);
 	//alert(logString.flag);
-	if(logString.flag == "1") window.location="index.html";
-	else window.location="loginPage.html";
+	if(logString.flag == "1") window.location="initialPage.html";
+	else window.location="index.html";
 }

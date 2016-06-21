@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog Movie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/login.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+    
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand active" href="#">Catalog Movie</a>
+      </div>
+    
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="registrationScreen.html">Add Title</a></li>
+          <li><a href="searchScreen.html">Search Title</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" onclick="openNav()"><span class="glyphicon glyphicon-cog"></span> Change Password</a></li>
+		  <li><a href="#" onclick="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+	<div id="myNav" class="overlay">
+    	<!-- Button to close the overlay navigation -->
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlay-content">
+    		<div id="login-inputs">	  
+				<form id="myForm">
+					<h1>Change Password</h1>
+					<input type="text" placeholder="User name" name="usuario"><br>
+					<input type="password" placeholder="Password" name="senha"><br>
+					<input type="text" placeholder="New name" name="newUser"><br>
+					<input type="password" placeholder="New Password" name="newKey"><br><br>
+					<input type="button" onclick="newPassword()" class="botao" value="Enter">
+				</form>
+			</div>
+        
+		</div>
+           
+    </div>  
+  <div class="col-md-12 form-horizontal">
+    <img class="img-responsive center-component" src="images/onlinelogomaker-052816-1415.png" alt="">
+	
+	
+  </div>  
+   
+   <script src="js/popupScript.js"></script> 
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>  
+  
+</body>
+</html>
